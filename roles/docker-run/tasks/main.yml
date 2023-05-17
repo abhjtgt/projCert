@@ -1,0 +1,3 @@
+---
+# tasks file for apache-tomcat
+- include_tasks: run-docker.yaml

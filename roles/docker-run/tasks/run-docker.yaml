@@ -1,0 +1,14 @@
+---
+- name: remove old running app, if any
+  shell:
+    cmd: docker rm --force moiapp
+- name: run docker app
+  shell:
+    cmd: docker run --name moiapp -d -p 8080:80 abhjtdk/projcert:latest
+- name: get running containers
+  shell:
+    cmd: docker ps
+  register: docker_ps
+- name: display irunning containers
+  debug:
+    var: docker_ps

@@ -1,0 +1,4 @@
+- name: play 1
+  hosts: test
+  roles:
+    - docker-install
