@@ -4,7 +4,7 @@
     cmd: docker rm --force moiapp
 - name: run docker app
   shell:
-    cmd: docker run --name moiapp -d -p 8080:80 abhjtdk/projcert:latest
+    cmd: docker run --name moiapp -d -p 8080:80 abhjtdk/projcert:{{ tag }}
 - name: get running containers
   shell:
     cmd: docker ps

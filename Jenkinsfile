@@ -86,7 +86,9 @@ pipeline {
         stage('Deploy app to Test server') {
             steps {
                 echo 'Deploying the app to test server'
-                sh "ansible-playbook -i hosts play_run.yaml"
+                sh '''
+                   ansible-playbook -i hosts play_run.yaml --extra-vars "tag=$BUILD_NUMBER"
+                '''
             }
             post {
                 success {
