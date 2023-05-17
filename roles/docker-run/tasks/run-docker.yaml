@@ -1,5 +1,5 @@
 ---
-- name: remove old running app, if any
+- name: deleting running container on Test server before launching new one
   shell:
     cmd: docker rm --force moiapp
 - name: run docker app
